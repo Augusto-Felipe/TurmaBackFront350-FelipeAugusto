@@ -76,3 +76,49 @@ print(meuNomeBarbara.peso)
 // Uma das classes filhas não deve conter construtor.
 // Uma das classes filhas deve conter contrutor indicando os valores de todas as suas propriedades.
 
+
+
+class Funcionario {
+    
+    var nome: String
+    var matriculaEmpresa: Int
+    var sexo: String
+    
+    init(nome: String, matriculaEmpresa: Int, sexo: String) {
+        self.nome = nome
+        self.matriculaEmpresa = matriculaEmpresa
+        self.sexo = sexo
+    }
+    
+    
+    func demitir() {
+        print("Funcionário se demitiu.")
+    }
+    
+    func baterPonto() {
+        print("Funcionário bateu o ponto")
+    }
+    
+}
+
+class Engenheiro: Funcionario {
+    
+    var matriculaCREA: Int = 12345
+    
+}
+
+class Advogado: Funcionario {
+    
+    var matriculaOAB: Int
+    
+    init(matriculaOAB: Int, nome: String, matriculaEmpresa: Int, sexo: String) {
+        self.matriculaOAB = matriculaOAB
+        super.init(nome: nome, matriculaEmpresa: matriculaEmpresa, sexo: sexo)
+    }
+}
+
+
+var advogado: Advogado = Advogado(matriculaOAB: 12345, nome: "Ana", matriculaEmpresa: 56789, sexo: "Masculino")
+
+
+
